@@ -69,11 +69,11 @@ prizeDraw() {
         if (ok := FindText(&X := "wait", &Y := 3, 0, 0, ScreenWidth, ScreenHeight, 0.1, 0.1, Text))
         {
             MouseMove(X, Y, 50)
+            Click("left", "1")  ; 点击
         }
         ; MouseMove(201 + X, 440 + Y, 50)  ; 返回
-        Click("left", "2")  ; 点击
         Text := "|<>*180$35.zzzznzU0DzbzCCT00Cyww00BxttzyM03nzxk07s0DbjjzzzTTTzzyEQw00A01s00HtvzaTbrryQzDjjstkz8TXnVyEwDU7zztztk"
-        if (ok := FindText(&X, &Y, 0, 0, ScreenWidth, ScreenHeight, 0.2, 0.1, Text))
+        if (ok := FindText(&X, &Y, 0, 0, ScreenWidth, ScreenHeight, 0.3, 0.1, Text))
         {
             isRunning := false
             Break  ; 找到后退出循环
@@ -83,9 +83,10 @@ prizeDraw() {
             if (ok := FindText(&X := "wait", &Y := 3, 0, 0, ScreenWidth, ScreenHeight, 0.1, 0.1, Text))
             {
                 MouseMove(X, Y, 50)
+                Click("left", "1")  ; 点击
+                Sleep(1000)
             }
-            Click("left", "2")  ; 点击
-            Sleep(1000)
+           
         }
 
     }
@@ -103,9 +104,9 @@ F8:: {
         global SX, SY
         MouseMove(X, Y + 100, 50)
         SX := X, SY := Y
+        Click("left", "1")
+        Send("{WheelDown 3}")
     }
-    Click("left", "1")
-    Send("{WheelDown 3}")
 
     ; 循环直到按下 F9 键停止
     while (isRunning) {
