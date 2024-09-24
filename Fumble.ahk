@@ -67,7 +67,7 @@ F8:: {
     Text:="|<>##0.90$0/0/F9E0DA,0/2/E0ADA2,-3/5/F4D8D0,3/5/F7DED9,0/8/E98D8D,0/12/F6DFDA,-3/11/EFCFC5,4/11/F4D8CD"
     if (ok := FindText(&X:= "wait", &Y:= 3, Integer(ScreenWidth/3), 0, ScreenWidth, ScreenHeight, 0, 0, Text))
     {
-        MsgBox("找到了！！！")
+        ; MsgBox("找到了！！！")
         MouseDragWithCurve(X, Y,1039, 502)
     } else {
         MsgBox("没找到！！！")
