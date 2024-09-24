@@ -61,14 +61,17 @@ MouseDragWithCurve(StartX, StartY, EndX, EndY)
 ; 当按下 F8 键时，开始循环
 F8:: {
     isRunning := true  ; 开始循环
-    global X, Y
-    WinGetPos(&X, &Y, &Width, &Height, "ZMDesktopElf")
-    MouseDragWithCurve(X+100, Y+100,1039, 502)
-    ; Text:="|<>##0.90$0/0/524F5D,-1/5/342939,27/6/40363A,40/0/30202E,21/-5/FFE5DE"
-    ; if (ok := FindText(&X:= "wait", &Y:= 3, 0, 0, X, Y, Width, Height, Text))
-    ; {
-    ;  
-    ; }
+    global X, Y, ScreenWidth, ScreenHeight
+    ; WinGetPos(&X, &Y, &Width, &Height, "ZMDesktopElf") 
+    MsgBox(Integer(ScreenWidth/3) . " " . Y . " " . Integer(ScreenWidth/3*2) . " " . ScreenHeight)
+    Text:="|<>##0.90$0/0/F9E0DA,0/2/E0ADA2,-3/5/F4D8D0,3/5/F7DED9,0/8/E98D8D,0/12/F6DFDA,-3/11/EFCFC5,4/11/F4D8CD"
+    if (ok := FindText(&X:= "wait", &Y:= 3, Integer(ScreenWidth/3), 0, ScreenWidth, ScreenHeight, 0, 0, Text))
+    {
+        MsgBox("找到了！！！")
+        MouseDragWithCurve(X, Y,1039, 502)
+    } else {
+        MsgBox("没找到！！！")
+    }
     n := 0  ; 初始化 n
 
     ; 循环直到按下 F9 键停止
