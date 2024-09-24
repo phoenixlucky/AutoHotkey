@@ -64,15 +64,16 @@ F8:: {
 
     ; 循环直到按下 F9 键停止
     while (isRunning) {
-        ;MouseMove(1843-1497+X, 594-8+Y, 50)  ; 免费
-        ;Click("left", "1")
+        ; MouseMove(1843-1497+X, 594-8+Y, 50)  ; 免费
+        ; Click("left", "1")
         Sleep(3000)
 
-        ;2执行 2 次兑换操作
-        ;performExchange(2,3)
-
         ;3浏览部分
-        ;performBrowse(3, 5, 3)
+        performBrowse(3, 5, 3)
+
+        
+        ;2执行 2 次兑换操作
+        performExchange(2,3)
 
         ;抽奖
         prizeDraw()

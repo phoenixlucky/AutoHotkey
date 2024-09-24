@@ -14,8 +14,8 @@ F8:: {
   ; 循环直到按下 F9 键停止
   while (isRunning) {
     Sleep(500)
-    Text:="|<>##0.90$0/0/FFC484,4/0/D97C35,4/4/E97026,17/3/FFF9E5"
-    if (ok:=FindText(&X:= "wait", &Y:= 3, 0, 546, 1919, 741, 0, 0, Text))
+    Text:="|<>##0.90$0/0/FE9B39,0/4/FEA854,-1/14/F1AC63,2/20/F99E3D,6/10/FFA142,4/8/FFFCE2,2/5/FFFEFA"
+    if (ok:=FindText(&X:= "wait", &Y:= 3, 640, 0, ScreenWidth, ScreenHeight,0,0, Text))
     {
       FindText().Click(X, Y, "L")
     }
@@ -25,7 +25,7 @@ F8:: {
     }
 
     Text := "|<一键收>**30$50.000E306M000CNs9a0003zz6NU001zWFazk000PaNjs007wdaHCTztzclhnDzyAzwPRnzzbWNCzw001zjngS000StYz7U003DzDls000n7Vwy000TtU7Rk003zz1yC0006TkT1c"
-    if (ok2 := FindText(&X:= "wait", &Y:= 3,  0, 0, ScreenWidth, ScreenHeight, 0, 0, Text))
+    if (ok2 := FindText(&X:= "wait", &Y:= 3,  640, 0, ScreenWidth, ScreenHeight, 0, 0, Text))
     {
       FindText().Click(X, Y, "L", 2)
     }
