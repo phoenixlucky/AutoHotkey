@@ -1,5 +1,5 @@
 ﻿#Requires AutoHotkey v2.0
-#Include E:\tool\AdventureCN - v5.7.0\Tools\Findtext\FindText.ahk  ; 替换成 FindText 9.9 的路径
+#Include FindText.ahk  ; 替换成 FindText 9.9 的路径
 
 t1:=A_TickCount, Text:=X:=Y:=""
 

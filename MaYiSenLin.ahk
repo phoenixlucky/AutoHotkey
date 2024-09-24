@@ -1,11 +1,12 @@
-﻿CoordMode("Mouse","Screen")
+﻿#SingleInstance force
+CoordMode("Mouse","Screen")
+
 ; 定义一个全局变量来控制循环
 global isRunning := false
 
 ; 当按下 F8 键时，开始锁屏与取消锁屏的循环
 F8:: {
     isRunning := true
-    
     ; 循环直到按下 F9 键停止
     while (isRunning) {
 		Sleep(500)

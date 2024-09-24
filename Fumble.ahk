@@ -63,11 +63,12 @@ F8:: {
     isRunning := true  ; 开始循环
     global X, Y
     WinGetPos(&X, &Y, &Width, &Height, "ZMDesktopElf")
-    Text:="|<>##0.90$0/0/524F5D,-1/5/342939,27/6/40363A,40/0/30202E,21/-5/FFE5DE"
-    if (ok := FindText(&X:= "wait", &Y:= 3, 0, 0, X, Y, Width, Height, Text))
-    {
-      MouseDragWithCurve(X, Y,1039, 502)
-    }
+    MouseDragWithCurve(X+100, Y+100,1039, 502)
+    ; Text:="|<>##0.90$0/0/524F5D,-1/5/342939,27/6/40363A,40/0/30202E,21/-5/FFE5DE"
+    ; if (ok := FindText(&X:= "wait", &Y:= 3, 0, 0, X, Y, Width, Height, Text))
+    ; {
+    ;  
+    ; }
     n := 0  ; 初始化 n
 
     ; 循环直到按下 F9 键停止
