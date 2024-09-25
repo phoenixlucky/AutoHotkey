@@ -23,11 +23,15 @@ F8:: {
       MsgBox("执行结束了！")
       break
     }
-
-    Text := "|<一键收>**30$50.000E306M000CNs9a0003zz6NU001zWFazk000PaNjs007wdaHCTztzclhnDzyAzwPRnzzbWNCzw001zjngS000StYz7U003DzDls000n7Vwy000TtU7Rk003zz1yC0006TkT1c"
-    if (ok2 := FindText(&X:= "wait", &Y:= 3,  640, 0, ScreenWidth, ScreenHeight, 0, 0, Text))
+    Text:="|<>*162$31.0s000Dw03zjy01zrz00Tzw001zw000zzU03zzs01zzy01zzz00zzzk0Tzzk0DyTs07zDw03zby01znz00ztzU0Twzk0DwDs07y7w03z3y01zVz00zUTU0Tk7k0Dk1s07kE"
+    if (ok:=FindText(&X:= "wait", &Y:= 3, 1159-150000, 256-150000, 1159+150000, 256+150000, 0.1, 0.1, Text))
     {
-      FindText().Click(X, Y, "L", 2)
+      FindText().Click(X, Y, "L")
+    }
+    Text := "|<一键收>**30$50.000E306M000CNs9a0003zz6NU001zWFazk000PaNjs007wdaHCTztzclhnDzyAzwPRnzzbWNCzw001zjngS000StYz7U003DzDls000n7Vwy000TtU7Rk003zz1yC0006TkT1c"
+    if (ok2 := FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.1, 0.1, Text))
+    {
+      FindText().Click(X, Y, "L")
     }
     Sleep(2500)
   }
