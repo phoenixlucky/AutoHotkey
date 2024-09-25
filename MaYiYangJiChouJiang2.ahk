@@ -66,7 +66,7 @@ prizeDraw() {
     global isRunning
     Loop 6 {
         Text := "|<>*180$22.k003000A000k102248M0EVU126048MMFVU16600MM0VXU26CDsEksU3320Q08Tk8Xz0WDw7Mzs"
-        if (ok := FindText(&X := "wait", &Y := 3, 0, 0, ScreenWidth, ScreenHeight, 0.1, 0.1, Text))
+        if (ok := FindText(&X := "wait", &Y := 3, 0, 0, ScreenWidth, ScreenHeight, 0.4, 0.2, Text))
         {
             MouseMove(X, Y, 50)
             Click("left", "1")  ; 点击
@@ -99,26 +99,29 @@ F8:: {
     global isRunning
     isRunning := true
     Text := "|<>*180$22.k003000A000k102248M0EVU126048MMFVU16600MM0VXU26CDsEksU3320Q08Tk8Xz0WDw7Mzs"
-    if (ok := FindText(&X := "wait", &Y := 3, 0, 0, ScreenWidth, ScreenHeight, 0.1, 0.1, Text))
+    if (ok := FindText(&X := "wait", &Y := 3, 0, 0, ScreenWidth, ScreenHeight, 0.4, 0.2, Text))
     {
         global SX, SY
         MouseMove(X, Y + 100, 50)
         SX := X, SY := Y
         Click("left", "1")
         Send("{WheelDown 3}")
+        ; MsgBox("找到了！！！")
     }
 
     ; 循环直到按下 F9 键停止
     while (isRunning) {
-        ;MouseMove(SX+140, SY+140, 50)  ; 免费
-        ;Click("left", "1")
-        ;Sleep(3000)
-
-        ;2执行 2 次兑换操作
-        ;performExchange(2,3)
+        global SX, SY
+        ; MsgBox(SX,SY)
+        ; MouseMove(SX+140, SY+140, 50)  ; 免费
+        ; Click("left", "1")
+        ; Sleep(3000)
 
         ;3浏览部分
-        ;performBrowse(3,5,3)
+        performBrowse(3,5,3)
+
+        ;2执行 2 次兑换操作
+        performExchange(2,3)
 
         ;抽奖
         prizeDraw()

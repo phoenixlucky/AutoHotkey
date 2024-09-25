@@ -76,7 +76,7 @@ F8:: {
         performExchange(2,3)
 
         ;抽奖
-        prizeDraw()
+        ; prizeDraw()
     }
 }
 
