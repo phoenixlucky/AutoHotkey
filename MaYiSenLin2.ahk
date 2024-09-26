@@ -23,10 +23,17 @@ F8:: {
       MsgBox("执行结束了！")
       break
     }
+    ;查找礼物
     Text:="|<>*162$31.0s000Dw03zjy01zrz00Tzw001zw000zzU03zzs01zzy01zzz00zzzk0Tzzk0DyTs07zDw03zby01znz00ztzU0Twzk0DwDs07y7w03z3y01zVz00zUTU0Tk7k0Dk1s07kE"
     if (ok:=FindText(&X:= "wait", &Y:= 3, 1159-150000, 256-150000, 1159+150000, 256+150000, 0.1, 0.1, Text))
     {
       FindText().Click(X, Y, "L")
+      ;礼物确认按钮
+      Text:="|<>*160$40.A0000VUk3kC7C3yzUxzyTva1zzxiAA21kCskk0zsn333XzkAAATA3DzkkwzwTz30n1kAAA3A71skkAzw7n30n0kPgA3Dz36tkSzwQTy3w03UbsTzzw001lzzU"
+      if (ok:=FindText(&X:= "wait", &Y:= 3, 1159-150000, 256-150000, 1159+150000, 256+150000, 0.1, 0.1, Text))
+        {
+          FindText().Click(X, Y, "L")
+        }
     }
     Text := "|<一键收>**30$50.000E306M000CNs9a0003zz6NU001zWFazk000PaNjs007wdaHCTztzclhnDzyAzwPRnzzbWNCzw001zjngS000StYz7U003DzDls000n7Vwy000TtU7Rk003zz1yC0006TkT1c"
     if (ok2 := FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.1, 0.1, Text))
