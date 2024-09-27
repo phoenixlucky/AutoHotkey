@@ -14,12 +14,12 @@ performExchange(repeatCount := 2, scrollTimes := 3) {
     Loop repeatCount {
         Send("{WheelDown " scrollTimes "}")  ; 滚轮向下
         Text:="|<>*166$33.400800kz1XyTzUSTtkE3s3D20vTvvz6Tz6T0y0PwE1XvTbsAzNzz1aPDW0AnPoF1jvq38DSMkT1kD63kA1o"
-        if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight, 0.2, 0.2, Text))
+        if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight, 0.3, 0.2, Text))
             {
                 MouseMove(X + 200, Y, 50)
                 Click("left", "1")  ; 点击浏览
                 Text:="|<>*191$29.XnzbDXbzCTbDw0TyTk0kwzbxttzDvnly07b3y0T+HzNy1bwnw3bnaMD6D0zzQz3"
-                if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight, 0.2, 0.2, Text))
+                if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight, 0.3, 0.2, Text))
                     {
                         MouseMove(X, Y, 50)
                         Click("left", "1")  ; 点击浏览
@@ -38,7 +38,7 @@ performBrowse(repeatCount := 3, scrollCount := 5, wheelDownTimes := 3) {
     Loop repeatCount {
         Send("{WheelDown " wheelDownTimes "}")  ; 滚轮向下 3 次
         Text := "|<杂货铺>*166$32.3006kDz03Anzs3Xw761vsVVgGyTkT0VysnU8DDzs7zXzz1zQ4k0NX3Bk6MlnC1DwskkDT9w0T1sA0202U"
-        if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight, 0.2, 0.2, Text))
+        if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight-300, 0.3, 0.2, Text))
         {
             MouseMove(X + 200, Y, 50)
             Click("left", "1")  ; 点击浏览
@@ -65,7 +65,7 @@ performBrowse(repeatCount := 3, scrollCount := 5, wheelDownTimes := 3) {
             Click("left", "1")  ; 点击返回
         }
         Sleep(2000)
-        Text := "|<>*180$22.k003000A000k102248M0EVU126048MMFVU16600MM0VXU26CDsEksU3320Q08Tk8Xz0WDw7Mzs"
+        Text:="|<>*195$24.a1U1XbqV83kZKNqZqVkl0VknsVqHW/kFX3aYkNyCwzzzU"
         if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight,  0.2, 0.2, Text))
         {
             MouseMove(X, Y, 50)
@@ -114,12 +114,12 @@ prizeDraw() {
 F8:: {
     global isRunning
     isRunning := true
-    Text := "|<>*180$22.k003000A000k102248M0EVU126048MMFVU16600MM0VXU26CDsEksU3320Q08Tk8Xz0WDw7Mzs"
+    
+    Text:="|<>*180$57.2800U00A00n30A0A3U06MM1jzUzzVn70RzwDzwBzzX0s3wD1jzss70tnkQNn70s07w3XCts703zwwRqDDzbyTvjqlvzyyk6ByS3DzU701gnkM70TzwBaQ30s3zzVgnUM701kQBaS30s0Q3VjrsNzwDUQAznXDzrlz1UAAM00s7kU"
     if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight, 0.4, 0.2, Text))
     {
         global SX, SY
-        MouseMove(X, Y + 100, 50)
-        SX := X, SY := Y
+        MouseMove(X, Y, 50)
         Click("left", "1")
         Send("{WheelDown 3}")
         ; MsgBox("找到了！！！")
@@ -127,20 +127,19 @@ F8:: {
 
     ; 循环直到按下 F9 键停止
     while (isRunning) {
-        global SX, SY
         ; 免费
-        Text:="|<>*176$48.wDsDwkkHsDsTs0U0sDsTs0U0k7kTsEU0U601zUzlU401w0kVU001s1U1sM01kV03sMEVkV07sMEVnV0DkMEVzwDzU801zwDz0801k0010801k0010MU3U001kkVXk003kkV3zU3zUkV3k0UD0k03U1U31k03U3U31k070Tw37w0TjzzzU"
-        if (ok:=FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.2, 0.2, Text))
+        Text:="|<>*195$24.a1U1XbqV83kZKNqZqVkl0VknsVqHW/kFX3aYkNyCwzzzU"
+        if (ok:=FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.3, 0.2, Text))
         {
         FindText().Click(X, Y, "L")
         }
         Sleep(1000)
 
         ;3浏览部分
-        ;performBrowse(3,5,3)
+        performBrowse(3,5,3)
 
         ;2执行 2 次兑换操作
-        ; performExchange(2,3)
+        performExchange(2,3)
 
         ;抽奖
         prizeDraw()
