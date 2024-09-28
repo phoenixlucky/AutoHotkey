@@ -13,6 +13,7 @@ t1 := A_TickCount, Text := X := Y := ""
 performExchange(repeatCount := 2, scrollTimes := 3) {
     Loop repeatCount {
         Send("{WheelDown " scrollTimes "}")  ; 滚轮向下
+        Sleep(2000)
         Text:="|<>*166$33.400800kz1XyTzUSTtkE3s3D20vTvvz6Tz6T0y0PwE1XvTbsAzNzz1aPDW0AnPoF1jvq38DSMkT1kD63kA1o"
         if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight, 0.3, 0.2, Text))
             {
@@ -38,7 +39,7 @@ performBrowse(repeatCount := 3, scrollCount := 5, wheelDownTimes := 3) {
     Loop repeatCount {
         Send("{WheelDown " wheelDownTimes "}")  ; 滚轮向下 3 次
         Text := "|<杂货铺>*166$32.3006kDz03Anzs3Xw761vsVVgGyTkT0VysnU8DDzs7zXzz1zQ4k0NX3Bk6MlnC1DwskkDT9w0T1sA0202U"
-        if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight-300, 0.3, 0.2, Text))
+        if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight-400, 0.3, 0.2, Text))
         {
             MouseMove(X + 200, Y, 50)
             Click("left", "1")  ; 点击浏览
@@ -129,7 +130,7 @@ F8:: {
     while (isRunning) {
         ; 免费
         Text:="|<>*195$24.a1U1XbqV83kZKNqZqVkl0VknsVqHW/kFX3aYkNyCwzzzU"
-        if (ok:=FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.3, 0.2, Text))
+        if (ok:=FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.2, 0.2, Text))
         {
         FindText().Click(X, Y, "L")
         }
