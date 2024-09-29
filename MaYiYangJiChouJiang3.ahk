@@ -41,7 +41,7 @@ performBrowse(repeatCount := 3, scrollCount := 5, wheelDownTimes := 3) {
         Text := "|<杂货铺>*166$32.3006kDz03Anzs3Xw761vsVVgGyTkT0VysnU8DDzs7zXzz1zQ4k0NX3Bk6MlnC1DwskkDT9w0T1sA0202U"
         if (ok := FindText(&X := "wait", &Y := 3, 640, 0, ScreenWidth, ScreenHeight-400, 0.3, 0.2, Text))
         {
-            MouseMove(X + 200, Y, 50)
+            MouseMove(X + 210, Y+10, 50)
             Click("left", "1")  ; 点击浏览
         } else {
             break
@@ -72,7 +72,7 @@ performBrowse(repeatCount := 3, scrollCount := 5, wheelDownTimes := 3) {
             MouseMove(X, Y, 50)
             Click("left", "1")  ; 领奖
         }
-        Sleep(1000)
+        Sleep(2200)
     }
     return
 }
