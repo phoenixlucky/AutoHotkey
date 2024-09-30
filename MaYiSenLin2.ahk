@@ -13,7 +13,7 @@ F8:: {
   isRunning := true
   ; 循环直到按下 F9 键停止
   while (isRunning) {
-    Sleep(500)
+    Sleep(200)
     Text:="|<>##0.90$0/0/FE9B39,0/4/FEA854,-1/14/F1AC63,2/20/F99E3D,6/10/FFA142,4/8/FFFCE2,2/5/FFFEFA"
     if (ok:=FindText(&X:= "wait", &Y:= 3, 640, 0, ScreenWidth, ScreenHeight,0,0, Text))
     {
@@ -40,7 +40,6 @@ F8:: {
     {
       FindText().Click(X, Y, "L")
     }
-    Sleep(2500)
   }
 }
 
