@@ -63,7 +63,7 @@ F8:: {
     isRunning := true  ; 开始循环
     global X, Y, ScreenWidth, ScreenHeight
     ; WinGetPos(&X, &Y, &Width, &Height, "ZMDesktopElf") 
-    MsgBox(Integer(ScreenWidth/3) . " " . Y . " " . Integer(ScreenWidth/3*2) . " " . ScreenHeight)
+    ; MsgBox(Integer(ScreenWidth/3) . " " . Y . " " . Integer(ScreenWidth/3*2) . " " . ScreenHeight)
     Text:="|<>##0.90$0/0/F9E0DA,0/2/E0ADA2,-3/5/F4D8D0,3/5/F7DED9,0/8/E98D8D,0/12/F6DFDA,-3/11/EFCFC5,4/11/F4D8CD"
     if (ok := FindText(&X:= "wait", &Y:= 3, Integer(ScreenWidth/3), 0, ScreenWidth, ScreenHeight, 0, 0, Text))
     {
