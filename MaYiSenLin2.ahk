@@ -37,7 +37,7 @@ F8:: {
     }
     Text:="|<>*163$31.001UA000zjU00Qnk000rw00DMxzzbzyzzlXS001tz000zzU00Bzs004Tw003wk001zz000Azc"
     ; Text := "|<一键收>**30$50.000E306M000CNs9a0003zz6NU001zWFazk000PaNjs007wdaHCTztzclhnDzyAzwPRnzzbWNCzw001zjngS000StYz7U003DzDls000n7Vwy000TtU7Rk003zz1yC0006TkT1c"
-    if (ok2 := FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.1, 0.1, Text))
+    if (ok2 := FindText(&X, &Y,  640, 0, ScreenWidth, ScreenHeight, 0.2, 0.1, Text))
     {
       FindText().Click(X, Y, "L")
     }
